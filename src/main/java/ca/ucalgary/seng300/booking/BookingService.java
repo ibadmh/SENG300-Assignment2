@@ -24,6 +24,7 @@ public class BookingService {
     public CreateResult create(String roomId, String ownerId, Instant start, Instant end) {
         Instant now = clock.instant();
         if (!start.isAfter(now) || !end.isAfter(start)) {
+            repository.save(new Booking(nextId.get(), roomId, ownerId, start, end, BookingState.ACTIVE));
             return new CreateResult(CreateStatus.INVALID_TIME, null);
         }
         for (Booking existing : repository.all()) {
