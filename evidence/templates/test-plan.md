@@ -73,4 +73,14 @@ Owned by the R3 to R5 members: (1) cancel successfully then cancel again; (2) no
 
 ## Changes after code inspection
 
-(Filled in after BookingService.java is read; see the Phase B commit.)
+Phase B, written after reading BookingService.create() (src/main/java/ca/ucalgary/seng300/booking/BookingService.java lines 24 to 40). I read it to adjust the plan, not to derive expected values. Expected values still come from the rules.
+
+What I saw and what it changes for R1:
+1. R1 is one inline guard at line 26, `!start.isAfter(now) || !end.isAfter(start)`, returning INVALID_TIME at line 27, before the conflict loop at line 29. The order matches the rule, so the ordering tests stay.
+2. Both comparisons are strict, matching the plain reading of "after now". Tests expect INVALID_TIME because of the rule text, not because of the code. If the TA says otherwise, tests and code change together.
+3. `||` short-circuits. When the start is bad the end check never runs. So the both-bad case does not reach the end condition. Cases where ONLY the start is bad and ONLY the end is bad are needed; Phase A already has them (start edges with a valid end, end edges with a valid start). Do not count the both-bad row toward end-branch coverage.
+4. `nextId.get()` and `save` run only after validation, so no ID is consumed on rejection. That is not a rule, so tests do not assert it.
+5. The conflict loop needs state ACTIVE and the same room, so ordering seeds must be ACTIVE and in the same room (already planned). A comment in the ordering tests says so.
+6. There is no separate time-validation method. For the Part 3 "one small method" decision-outcome table, use create() as a whole (agree with the R2 owner) and list R1's share.
+
+Plan changes: added the short-circuit note (item 3) and the same-room/ACTIVE comment in ordering tests. No test was added or removed.
