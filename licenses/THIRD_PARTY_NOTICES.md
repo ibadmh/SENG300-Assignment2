@@ -1,0 +1,1 @@
+Apache Maven Wrapper scripts are from Apache Maven Wrapper 3.3.2 and retain their original license headers. See APACHE-LICENSE.txt. Maven and testing libraries download on first use under their respective licenses. Application and teaching code in this package are original SENG 300 teaching material.

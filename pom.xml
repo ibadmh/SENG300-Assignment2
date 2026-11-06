@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>ca.ucalgary.seng300</groupId><artifactId>booking-tests</artifactId><version>1.0.0</version>
+ <properties>
+  <maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <junit.version>5.11.4</junit.version><jqwik.version>1.9.2</jqwik.version>
+ </properties>
+ <dependencies>
+  <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><version>${junit.version}</version><scope>test</scope></dependency>
+ </dependencies>
+ <build><plugins>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-clean-plugin</artifactId><version>3.4.0</version></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-resources-plugin</artifactId><version>3.3.1</version></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.4.2</version></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.2</version>
+   <configuration><includes><include>**/*Test.java</include><include>**/*Properties.java</include></includes></configuration>
+  </plugin>
+  <plugin><groupId>org.jacoco</groupId><artifactId>jacoco-maven-plugin</artifactId><version>0.8.12</version>
+   <executions><execution><goals><goal>prepare-agent</goal></goals></execution>
+   <execution><id>report</id><phase>verify</phase><goals><goal>report</goal></goals></execution></executions>
+   <configuration><includes><include>ca/ucalgary/seng300/booking/BookingService*</include></includes></configuration>
+  </plugin>
+  <plugin><groupId>org.pitest</groupId><artifactId>pitest-maven</artifactId><version>1.17.4</version>
+   <configuration>
+    <targetClasses><param>ca.ucalgary.seng300.booking.BookingService*</param></targetClasses>
+    <targetTests><param>ca.ucalgary.seng300.booking.*Test</param></targetTests>
+    <mutators><mutator>DEFAULTS</mutator></mutators><threads>2</threads>
+    <timestampedReports>false</timestampedReports><outputFormats><param>HTML</param><param>XML</param></outputFormats>
+   </configuration>
+   <dependencies><dependency><groupId>org.pitest</groupId><artifactId>pitest-junit5-plugin</artifactId><version>1.2.2</version></dependency></dependencies>
+  </plugin>
+ </plugins></build>
+ <profiles><profile><id>properties</id>
+  <dependencies><dependency><groupId>net.jqwik</groupId><artifactId>jqwik</artifactId><version>${jqwik.version}</version><scope>test</scope></dependency></dependencies>
+  <build><plugins><plugin><groupId>org.codehaus.mojo</groupId><artifactId>build-helper-maven-plugin</artifactId><version>3.6.0</version>
+   <executions><execution><id>property-sources</id><phase>generate-test-sources</phase><goals><goal>add-test-source</goal></goals>
+    <configuration><sources><source>src/property-test/java</source></sources></configuration>
+   </execution></executions>
+  </plugin></plugins></build>
+ </profile></profiles>
+</project>

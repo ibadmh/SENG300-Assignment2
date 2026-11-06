@@ -1,0 +1,6 @@
+target/
+evidence/runs/
+.jqwik-database
+.idea/
+*.iml
+.vscode/
