@@ -23,9 +23,6 @@ public class BookingService {
 
     public CreateResult create(String roomId, String ownerId, Instant start, Instant end) {
         Instant now = clock.instant();
-        if (!start.isAfter(now) || !end.isAfter(start)) {
-            return new CreateResult(CreateStatus.INVALID_TIME, null);
-        }
         for (Booking existing : repository.all()) {
             if (existing.state() == BookingState.ACTIVE
                     && existing.roomId().equals(roomId)
@@ -33,6 +30,9 @@ public class BookingService {
                     && existing.start().isBefore(end)) {
                 return new CreateResult(CreateStatus.CONFLICT, null);
             }
+        }
+        if (!start.isAfter(now) || !end.isAfter(start)) {
+            return new CreateResult(CreateStatus.INVALID_TIME, null);
         }
         Booking booking = new Booking(nextId.get(), roomId, ownerId, start, end, BookingState.ACTIVE);
         repository.save(booking);
