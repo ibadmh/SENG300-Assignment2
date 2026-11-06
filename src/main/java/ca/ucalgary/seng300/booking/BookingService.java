@@ -42,6 +42,7 @@ public class BookingService {
     public CancelStatus cancel(String bookingId, String callerId) {
         Booking booking = repository.find(bookingId);
         if (!booking.ownerId().equals(callerId)) {
+            repository.save(booking.withState(BookingState.CANCELLED));
             return CancelStatus.DENIED;
         }
         if (booking.state() != BookingState.ACTIVE) {
