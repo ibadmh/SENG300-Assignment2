@@ -2,7 +2,7 @@
 
 Write this before inspecting method bodies.
 
-Status: Phase A, written before BookingService.java was opened. Sources used: handout, README, API.md, enums, records, TestFixtures, starter tests.
+Status: Phase A. Uses only the handout, README, API.md, records, enums, TestFixtures and starter tests.
 Author of this section: Ibad Hassan (rule R1, valid times). Sections for R2 to R5 and the shared decision table are filled in by the teammates who own those rules.
 
 ## Input groups and boundaries
@@ -83,4 +83,4 @@ What I saw and what it changes for R1:
 5. The conflict loop needs state ACTIVE and the same room, so ordering seeds must be ACTIVE and in the same room (already planned). A comment in the ordering tests says so.
 6. There is no separate time-validation method. For the Part 3 "one small method" decision-outcome table, use create() as a whole (agree with the R2 owner) and list R1's share.
 
-Plan changes: added the short-circuit note (item 3) and the same-room/ACTIVE comment in ordering tests. No test was added or removed.
+Plan changes: added the short-circuit note (item 3) and the same-room/ACTIVE comment in ordering tests. Four rows were added while writing the tests, from the rule text and not from the code: two far-from-edge invalid samples, one far valid sample (start a day away), and R5 'leave other bookings unchanged' (invalidRequest_leavesAllOtherBookingsUnchanged, validRequest_addsOneBookingAndLeavesOthersUnchanged). Surefire names parameterized cases by index (invalidTimes[1] is the first CsvSource row), the test-map uses start=,end= labels.
