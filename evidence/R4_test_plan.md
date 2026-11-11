@@ -96,8 +96,8 @@ Read BookingService.cancel() after the Phase A commit. Findings:
 1. Check order is owner, then state, then time. This matches the Phase A precedence reading. No change to the precedence rows or D4/D6/D8.
 2. Time is computed as Duration.between(clock.instant(), booking.start()).toMinutes(), then minutes < 120 returns TOO_LATE. Inclusive edge confirmed: at(120) is CANCELLED. No change to the boundary rows.
 3. end is not used in cancel(). The two end-independence tests stay as regression checks against a change that measures to end.
-4. toMinutes() truncates toward zero. For a start 119 min 59 s away it gives 119 (TOO_LATE, correct). For a past start it gives a negative value (TOO_LATE, correct). TestFixtures.seed() only takes whole minutes, so sub-minute starts were never tested. Added test: tooLate_119Minutes59Seconds_isTooLate, which saves a Booking built directly with start = NOW + 119 min 59 s and expects TOO_LATE with nothing changed. It catches an implementation that rounds up instead of truncating.
+4. toMinutes() truncates partial minutes. The handout limits inputs to UTC times rounded to whole minutes, so truncation cannot change a result inside the domain. A past start gives a negative value, which is TOO_LATE (correct, covered by T1). No sub-minute test.
 5. On success the service saves booking.withState(CANCELLED) and then notifies with that same value. Changed the CANCELLED assertion: the single notifier entry must equal the saved booking (state CANCELLED), not just have id b1.
 6. An unknown booking id makes repository.find() throw IllegalArgumentException. This is outside the R4 domain. No test added.
 
-Planned tests after inspection: the Phase A list, plus tooLate_119Minutes59Seconds_isTooLate.
+Planned tests after inspection: the Phase A list, unchanged.
