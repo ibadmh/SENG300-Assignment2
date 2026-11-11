@@ -103,8 +103,3 @@ Do not use the buggy branch for your coverage or mutation comparisons.
 - JaCoCo counters: https://www.jacoco.org/jacoco/trunk/doc/counters.html
 - PIT Maven: https://pitest.org/quickstart/maven/
 - jqwik 1.9.2: https://jqwik.net/docs/1.9.2/user-guide.html
-
-## Submission
-
-Submit one runnable Java project and one shared report as a PDF, with sections Part 1 through Part 6. Each section must identify its Java files and test names, results, and evidence. Part 1 needs planning records, not separate code. Include one Part 7 PDF per member, at most 250 words, named `UCID_name.pdf`. Submit source files, not only compiled classes or screenshots. Use the handout and report-outline template for the per-part checklist.
-
