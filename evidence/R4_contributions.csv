@@ -1,0 +1,2 @@
+group_number,student_name,student_id,design_work,test_implementation,investigation,review_work
+TBD,Dawood Shees Ahmed,TBD,"R4 plan: input groups T1-T7, 119/120/121 boundaries, end independence, R3 precedence, shared cancellation decision table (commits 2307f90, 2f94601, c589187)","R4CancellationTimeTest.java, 13 test cases (commit 3686d0a)",JaCoCo R4-only and starter+R4; PIT on starter+R4; required mutant minutes < 120 to <= 120 plus two more cancel() mutants,TBD

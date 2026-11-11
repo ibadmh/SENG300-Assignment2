@@ -1,0 +1,4 @@
+checkpoint,command,git_commit,working_tree_clean,passed,failed,skipped,covered_lines,total_lines,covered_branches,total_branches,mutation_status_counts,report_path
+R4 tests alone coverage,./mvnw -B clean verify -Dtest=R4CancellationTimeTest,3686d0a468399d34036a30f4ee39e6cb1b5c5836,true,13,0,0,18,31,6,20,,evidence/runs/r4/r4-only-coverage
+starter 3 + R4 13 coverage (r4-tests branch),./mvnw -B clean verify,3686d0a468399d34036a30f4ee39e6cb1b5c5836,true,16,0,0,24,31,9,20,,evidence/runs/r4/starter-plus-r4-coverage
+PIT on starter 3 + R4 13 (r4-tests branch),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,3686d0a468399d34036a30f4ee39e6cb1b5c5836,true,16,0,0,24,31,9,20,KILLED=12;SURVIVED=2;NO_COVERAGE=6;TIMED_OUT=0;NON_VIABLE=0;RUN_ERROR=0,evidence/runs/r4/r4-pit
