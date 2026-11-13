@@ -33,9 +33,33 @@ class R3PermissionStateTest {
         assertEquals(expected, actual, "wrong cancel status");
         assertEquals(savedBefore, f.repository.all(), "a rejected cancel must not change any saved booking");
         assertEquals(List.of(), f.notifier.requests(), "a rejected cancel must not request a notification");
+
+    }
+    
+    // D3
+    @Test
+    void owner_cancelledBooking_isInactive(){
+        TestFixtures f = new TestFixtures();
+        f.seed("b1", ROOM, OWNER, 180, 240, BookingState.CANCELLED);
+        seedOther(f);
+        List<Booking> savedBefore = f.repository.all();
+        CancelStatus status = f.service.cancel("b1", OWNER);
         
+        assertRejectedUnchanged(f, CancelStatus.INACTIVE, status, savedBefore);
     }
 
-    //TODO: D3, D5, D7, D9, D10
+    // D5
+    @Test
+    void owner_completedBooking_isInactive(){
+        TestFixtures f = new TestFixtures();
+        f.seed("b1", ROOM, OWNER, 180, 240, BookingState.COMPLETED);
+        seedOther(f);
+        List<Booking> savedBefore = f.repository.all();
+        CancelStatus status = f.service.cancel("b1", OWNER);
+
+        assertRejectedUnchanged(f, CancelStatus.INACTIVE, status, savedBefore);
+    }
+
+    //TODO: , D7, D9, D10
 }
 
