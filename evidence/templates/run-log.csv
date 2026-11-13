@@ -1,1 +1,18 @@
 checkpoint,command,git_commit,working_tree_clean,passed,failed,skipped,covered_lines,total_lines,covered_branches,total_branches,mutation_status_counts,report_path
+starter coverage (reference main),./mvnw -B clean verify,b4c869a6370b975b24324d6103d8c9cf375d5220,true,3,0,0,22,31,7,20,,evidence/runs/starter-coverage
+starter PIT (informational),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,b4c869a6370b975b24324d6103d8c9cf375d5220,true,3,0,0,22,31,7,20,KILLED=5;SURVIVED=7;NO_COVERAGE=8;TIMED_OUT=0;NON_VIABLE=0;RUN_ERROR=0,evidence/runs/starter-pit
+R1 tests alone coverage,./mvnw -B clean verify -Dtest=R1TimeValidationTest,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,17,0,0,19,31,11,20,,evidence/runs/r1-only-coverage
+final coverage (starter 3 + R1 17),./mvnw -B clean verify,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,20,0,0,29,31,15,20,,evidence/runs/final-coverage
+pre-mutation PIT,./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,20,0,0,29,31,15,20,KILLED=13;SURVIVED=5;NO_COVERAGE=2;TIMED_OUT=0;NON_VIABLE=0;RUN_ERROR=0,evidence/runs/pre-mutation
+final-mutation PIT (rerun; R1 tests unchanged except one extra valid row),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,20,0,0,29,31,15,20,KILLED=13;SURVIVED=5;NO_COVERAGE=2;TIMED_OUT=0;NON_VIABLE=0;RUN_ERROR=0,evidence/runs/final-mutation
+manual mutant startEqNowAccepted (not PIT),./mvnw -B clean test,a1570e0,true,18,2,0,,,,,manual: killed,evidence/runs/manual-mutants/startEqNowAccepted
+manual mutant endEqStartAccepted (not PIT),./mvnw -B clean test,2c2f4e4,true,18,2,0,,,,,manual: killed,evidence/runs/manual-mutants/endEqStartAccepted
+manual mutant dropEndCondition (not PIT),./mvnw -B clean test,e4d2d85,true,15,5,0,,,,,manual: killed,evidence/runs/manual-mutants/dropEndCondition
+manual mutant dropStartCondition (not PIT),./mvnw -B clean test,e3879fe,true,14,6,0,,,,,manual: killed,evidence/runs/manual-mutants/dropStartCondition
+manual mutant orToAnd (not PIT),./mvnw -B clean test,91e7395,true,9,11,0,,,,,manual: killed,evidence/runs/manual-mutants/orToAnd
+manual mutant startOneMinuteLate (not PIT),./mvnw -B clean test,0f455ba,true,19,1,0,,,,,manual: killed,evidence/runs/manual-mutants/startOneMinuteLate
+manual mutant saveThenReject (not PIT),./mvnw -B clean test,813b614,true,8,12,0,,,,,manual: killed,evidence/runs/manual-mutants/saveThenReject
+manual mutant notifyOnReject (not PIT),./mvnw -B clean test,ecd2a20,true,8,12,0,,,,,manual: killed,evidence/runs/manual-mutants/notifyOnReject
+manual mutant orderSwapped (not PIT),./mvnw -B clean test,3571696,true,17,3,0,,,,,manual: killed,evidence/runs/manual-mutants/orderSwapped
+status-only demo on saveThenReject mutant,./mvnw -B clean test -Dtest=StatusOnlyDemoTest,edac266,true,1,0,0,,,,,manual: SURVIVED the status-only test,evidence/runs/manual-mutants/saveThenReject-statusOnly
+buggy version with R1 suite (Part 5),./mvnw -B clean test,d3ddb52,true,20,0,0,,,,,no R1 or starter test fails,evidence/runs/part5/buggy-r1-suite
