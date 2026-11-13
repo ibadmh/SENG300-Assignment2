@@ -59,7 +59,70 @@ class R3PermissionStateTest {
 
         assertRejectedUnchanged(f, CancelStatus.INACTIVE, status, savedBefore);
     }
+    // D7
+    @Test
+    void nonOwner_activeBooking_isDenied(){
+        TestFixtures f = new TestFixtures();
+        f.seed("b1", ROOM, OWNER, 180, 240, BookingState.ACTIVE);
+        seedOther(f);
+        List<Booking> savedBefore = f.repository.all();
 
-    //TODO: , D7, D9, D10
+        CancelStatus status = f.service.cancel("b1", NON_OWNER);
+
+        assertRejectedUnchanged(f, CancelStatus.DENIED, status, savedBefore);
+    }
+
+    // D9
+    @Test
+    void nonOwner_cancelledBooking_isDenied(){
+        TestFixtures f = new TestFixtures();
+        f.seed("b1", ROOM, OWNER, 180, 240, BookingState.CANCELLED);
+        seedOther(f);
+        List<Booking> savedBefore = f.repository.all();
+
+        CancelStatus status = f.service.cancel("b1", NON_OWNER);
+
+        assertRejectedUnchanged(f, CancelStatus.DENIED, status, savedBefore);
+    }
+
+    // D9 again with a different time -  "any time" so the answer is still DENIED
+    @Test
+    void nonOwner_cancelledBookingStartingSoon_isDenied(){
+        TestFixtures f = new TestFixtures();
+        f.seed("b1", ROOM, OWNER, 30, 90, BookingState.CANCELLED);
+        seedOther(f);
+        List<Booking> savedBefore = f.repository.all();
+
+        CancelStatus status = f.service.cancel("b1", NON_OWNER);
+
+        assertRejectedUnchanged(f, CancelStatus.DENIED, status, savedBefore);
+    }
+
+    // D10
+    @Test
+    void nonOwner_completedBooking_isDenied(){
+        TestFixtures f = new TestFixtures();
+        f.seed("b1", ROOM, OWNER, 180, 240, BookingState.COMPLETED);
+        seedOther(f);
+        List<Booking> savedBefore = f.repository.all();
+
+        CancelStatus status = f.service.cancel("b1", NON_OWNER);
+
+        assertRejectedUnchanged(f, CancelStatus.DENIED, status, savedBefore);
+    }
+    // D10 again with a different time - a completed booking in the past (-120 to -60 minutes)
+    @Test
+    void nonOwner_completedBookingInThePast_isDenied(){
+        TestFixtures f = new TestFixtures();
+        f.seed("b1", ROOM, OWNER, -120, -60, BookingState.COMPLETED);
+        seedOther(f);
+        List<Booking> savedBefore = f.repository.all();
+
+        CancelStatus status = f.service.cancel("b1", NON_OWNER);
+
+        assertRejectedUnchanged(f, CancelStatus.DENIED, status, savedBefore);
+    }
+
+
 }
 
