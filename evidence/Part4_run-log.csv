@@ -1,0 +1,9 @@
+checkpoint,command,git_commit,working_tree_clean,passed,failed,skipped,covered_lines,total_lines,covered_branches,total_branches,mutation_status_counts,report_path
+pre-mutation tests (main with R1-R4),./mvnw -B clean test,3af2db5,true,52,0,0,,,,,,
+pre-mutation PIT (main with R1-R4),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,3af2db5,true,52,0,0,31,31,,,KILLED=20;SURVIVED=0;NO_COVERAGE=0;TIMED_OUT=0;RUN_ERROR=0;NON_VIABLE=0;MEMORY_ERROR=0,evidence/runs/pre-mutation
+manual recheck M1 minutes <= 120 (temporary local edit; restored),./mvnw -B test,3af2db5 + local edit,false,49,3,0,,,,,KILLED (manual),evidence/runs/manual-mutants-part4/M1_le120.log
+manual recheck M2 save removed (temporary local edit; restored),./mvnw -B test,3af2db5 + local edit,false,42,10,0,,,,,KILLED (manual),evidence/runs/manual-mutants-part4/M2_nosave.log
+manual recheck M3 ACTIVE check -> false (temporary local edit; restored),./mvnw -B test,3af2db5 + local edit,false,46,6,0,,,,,KILLED (manual),evidence/runs/manual-mutants-part4/M3_false.log
+manual M3 opposite: ACTIVE check -> true (not a PIT mutant; restored),./mvnw -B test,3af2db5 + local edit,false,50,2,0,,,,,KILLED (manual),evidence/runs/manual-mutants-part4/M3opp_true.log
+manual equivalent minutes <= 119 (not a PIT mutant; restored),./mvnw -B test,3af2db5 + local edit,false,52,0,0,,,,,equivalent (no failure expected),evidence/runs/manual-mutants-part4/EQ_le119.log
+final-mutation PIT (main with R1-R5),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,TBD,,,,,,,,,TBD,evidence/runs/final-mutation
