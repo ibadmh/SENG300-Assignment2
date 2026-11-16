@@ -1,0 +1,103 @@
+[ERROR] Tests run: 11, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.027 s <<< FAILURE! -- in ca.ucalgary.seng300.booking.R2RoomConflictsTest
+[ERROR] ca.ucalgary.seng300.booking.R2RoomConflictsTest.oneMinEndOverlap_isConflict -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <CONFLICT> but was: <CREATED>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.checkRoomConflict(R2RoomConflictsTest.java:112)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.oneMinEndOverlap_isConflict(R2RoomConflictsTest.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] ca.ucalgary.seng300.booking.R2RoomConflictsTest.oneMinStartOverlap_isConflict -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <CONFLICT> but was: <CREATED>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.checkRoomConflict(R2RoomConflictsTest.java:112)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.oneMinStartOverlap_isConflict(R2RoomConflictsTest.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] ca.ucalgary.seng300.booking.R2RoomConflictsTest.identicalInterval_isConflict -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <CONFLICT> but was: <CREATED>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.checkRoomConflict(R2RoomConflictsTest.java:112)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.identicalInterval_isConflict(R2RoomConflictsTest.java:54)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] ca.ucalgary.seng300.booking.R2RoomConflictsTest.insideExisting_isConflict -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <CONFLICT> but was: <CREATED>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.checkRoomConflict(R2RoomConflictsTest.java:112)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.insideExisting_isConflict(R2RoomConflictsTest.java:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] ca.ucalgary.seng300.booking.R2RoomConflictsTest.coversExisting_isConflict -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <CONFLICT> but was: <CREATED>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.checkRoomConflict(R2RoomConflictsTest.java:112)
+	at ca.ucalgary.seng300.booking.R2RoomConflictsTest.coversExisting_isConflict(R2RoomConflictsTest.java:48)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] Tests run: 17, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.017 s <<< FAILURE! -- in ca.ucalgary.seng300.booking.R1TimeValidationTest
+[ERROR] ca.ucalgary.seng300.booking.R1TimeValidationTest.controlSameSeedValidOverlap_isConflict -- Time elapsed: 0 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: valid times overlapping an ACTIVE booking in the same room must conflict ==> expected: <CONFLICT> but was: <CREATED>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+	at ca.ucalgary.seng300.booking.R1TimeValidationTest.controlSameSeedValidOverlap_isConflict(R1TimeValidationTest.java:160)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] Failures: 
+[ERROR]   R1TimeValidationTest.controlSameSeedValidOverlap_isConflict:160 valid times overlapping an ACTIVE booking in the same room must conflict ==> expected: <CONFLICT> but was: <CREATED>
+[ERROR]   R2RoomConflictsTest.coversExisting_isConflict:48->checkRoomConflict:112 expected: <CONFLICT> but was: <CREATED>
+[ERROR]   R2RoomConflictsTest.identicalInterval_isConflict:54->checkRoomConflict:112 expected: <CONFLICT> but was: <CREATED>
+[ERROR]   R2RoomConflictsTest.insideExisting_isConflict:42->checkRoomConflict:112 expected: <CONFLICT> but was: <CREATED>
+[ERROR]   R2RoomConflictsTest.oneMinEndOverlap_isConflict:36->checkRoomConflict:112 expected: <CONFLICT> but was: <CREATED>
+[ERROR]   R2RoomConflictsTest.oneMinStartOverlap_isConflict:30->checkRoomConflict:112 expected: <CONFLICT> but was: <CREATED>
+[ERROR] Tests run: 52, Failures: 6, Errors: 0, Skipped: 0
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.2:test (default-test) on project booking-tests: There are test failures.
+[ERROR] 
+[ERROR] See /Users/dawoodshees/Desktop/UofC/F26/SENG300/A2/repo/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
