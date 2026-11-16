@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-/* Z
+/*
 
 S1 owner cancels in time -> CANCELLED, then cancels again -> INACTIVE
    (cancelling again adds no notification and changes nothing)

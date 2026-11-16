@@ -110,6 +110,8 @@ class R2RoomConflictsTest {
                 requestedRoom, "Bob", at(start), at(end));
 
         assertEquals(expectedStatus, result.status());
+        assertEquals(List.of(), f.notifier.requests(),
+                "create() must never request a notification");
 
         if (expectedStatus == CreateStatus.CONFLICT) {
             //Rejection must return no ID and leave storage unchanged

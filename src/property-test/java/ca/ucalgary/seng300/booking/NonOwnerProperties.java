@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 
 
-public class NonOwnerExtension {
+public class NonOwnerProperties {
     @Property(tries = 100, seed = "67", generation = GenerationMode.RANDOMIZED)
         
    void nonOwnerTest(@ForAll @IntRange (min = 1, max = 1000) int idNum, @ForAll BookingState state){
