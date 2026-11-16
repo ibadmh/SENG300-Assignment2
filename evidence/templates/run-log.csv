@@ -16,3 +16,6 @@ manual mutant notifyOnReject (not PIT),./mvnw -B clean test,ecd2a20,true,8,12,0,
 manual mutant orderSwapped (not PIT),./mvnw -B clean test,3571696,true,17,3,0,,,,,manual: killed,evidence/runs/manual-mutants/orderSwapped
 status-only demo on saveThenReject mutant,./mvnw -B clean test -Dtest=StatusOnlyDemoTest,edac266,true,1,0,0,,,,,manual: SURVIVED the status-only test,evidence/runs/manual-mutants/saveThenReject-statusOnly
 buggy version with R1 suite (Part 5),./mvnw -B clean test,d3ddb52,true,20,0,0,,,,,no R1 or starter test fails,evidence/runs/part5/buggy-r1-suite
+R4 tests alone coverage,./mvnw -B clean verify -Dtest=R4CancellationTimeTest,3686d0a468399d34036a30f4ee39e6cb1b5c5836,true,13,0,0,18,31,6,20,,evidence/runs/r4/r4-only-coverage
+starter 3 + R4 13 coverage (r4-tests branch),./mvnw -B clean verify,3686d0a468399d34036a30f4ee39e6cb1b5c5836,true,16,0,0,24,31,9,20,,evidence/runs/r4/starter-plus-r4-coverage
+PIT on starter 3 + R4 13 (r4-tests branch),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,3686d0a468399d34036a30f4ee39e6cb1b5c5836,true,16,0,0,24,31,9,20,KILLED=12;SURVIVED=2;NO_COVERAGE=6;TIMED_OUT=0;NON_VIABLE=0;RUN_ERROR=0,evidence/runs/r4/r4-pit
