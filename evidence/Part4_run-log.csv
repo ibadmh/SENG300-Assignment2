@@ -6,4 +6,5 @@ manual recheck M2 save removed (temporary local edit; restored),./mvnw -B test,3
 manual recheck M3 ACTIVE check -> false (temporary local edit; restored),./mvnw -B test,3af2db5 + local edit,false,46,6,0,,,,,KILLED (manual),evidence/runs/manual-mutants-part4/M3_false.log
 manual M3 opposite: ACTIVE check -> true (not a PIT mutant; restored),./mvnw -B test,3af2db5 + local edit,false,50,2,0,,,,,KILLED (manual),evidence/runs/manual-mutants-part4/M3opp_true.log
 manual equivalent minutes <= 119 (not a PIT mutant; restored),./mvnw -B test,3af2db5 + local edit,false,52,0,0,,,,,equivalent (no failure expected),evidence/runs/manual-mutants-part4/EQ_le119.log
-final-mutation PIT (main with R1-R5),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,TBD,,,,,,,,,TBD,evidence/runs/final-mutation
+final-mutation tests (main 04745b6: R1-R4 + CancelSequenceTest; R5 not yet merged),./mvnw -B clean test,a8d60b6 (code and tests = main 04745b6),true,54,0,0,,,,,,
+final-mutation PIT (main 04745b6: R1-R4 + CancelSequenceTest; R5 not yet merged),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,a8d60b6 (code and tests = main 04745b6),true,54,0,0,31,31,,,KILLED=20;SURVIVED=0;NO_COVERAGE=0;TIMED_OUT=0;RUN_ERROR=0;NON_VIABLE=0;MEMORY_ERROR=0,evidence/runs/final-mutation

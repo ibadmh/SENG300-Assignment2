@@ -13,9 +13,9 @@ PIT 1.17.4, configured in `pom.xml` (target `BookingService*`, tests `*Test`, DE
 | Run | Commit | Tests | Generated | Killed | Survived | No coverage | Timed out | Run error | Score |
 |---|---|---|---|---|---|---|---|---|---|
 | Pre (R1–R4 committed) | 3af2db5 | 52 pass | 20 | 20 | 0 | 0 | 0 | 0 | 20/20 = 100% |
-| Final (R1–R5) | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| Final (R1–R4 + sequence tests) | 04745b6 | 54 pass | 20 | 20 | 0 | 0 | 0 | 0 | 20/20 = 100% |
 
-Score = KILLED / generated. All 20 kills are assertion failures; none come from timeouts or tool errors (TIMED_OUT, RUN_ERROR, MEMORY_ERROR and NON_VIABLE are all 0). For comparison, the earlier run with only the starter and R4 tests (`evidence/runs/r4/r4-pit`) gave 12 killed, 2 survived and 6 no coverage.
+Score = KILLED / generated. In both runs, all 20 kills are assertion failures; none come from timeouts or tool errors (TIMED_OUT, RUN_ERROR, MEMORY_ERROR and NON_VIABLE are all 0). For comparison, the earlier run with only the starter and R4 tests (`evidence/runs/r4/r4-pit`) gave 12 killed, 2 survived and 6 no coverage.
 
 ## Three mutants
 PIT names only the first killing test, so we rechecked each mutant with a temporary local edit, ran the whole suite and restored the code (logs in `evidence/runs/manual-mutants-part4/`).
@@ -32,7 +32,7 @@ PIT names only the first killing test, so we rechecked each mutant with a tempor
 
 **M3.** With the starter and R4 tests no test ever created a booking against an existing ACTIVE booking in the same room, so the line was never reached. The R2 overlap tests reach it and expect CONFLICT. The opposite change (`true`, so CANCELLED and COMPLETED bookings would also block the room) is not a DEFAULTS mutant. Our manual run shows that only `cancelledExistingOverlap_isCreated` and `completedExistingOverlap_isCreated` catch it.
 
-**Improvements.** All three mutants are killed by the committed rule tests, so no new test was needed after the pre run. M2 and M3 were fixed by the R1/R2 saved-data and overlap tests, which were written before the pre run, and M1 by the R4 boundary row at 120.
+**Improvements.** All three mutants are killed by the committed rule tests, so no new test was needed after the pre run. M2 and M3 were fixed by the R1/R2 saved-data and overlap tests, which were written before the pre run, and M1 by the R4 boundary row at 120. Between the runs, `CancelSequenceTest` (two sequence tests) was added; the final run gives the same result (20/20 killed), and the same tests kill M1, M2 and M3.
 
 ## Equivalent mutant
 `cancel()` line 51: `minutes < 120` → `minutes <= 119`. `minutes` is a `long` produced by `Duration.toMinutes()`. For every integer m, m < 120 holds exactly when m ≤ 119, so every allowed input gets the same status, saved data and notifications from both versions. The manual run passes 52 of 52 tests, as expected. No test can kill this mutant, and it is not counted in the PIT totals.
