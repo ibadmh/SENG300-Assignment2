@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ca.ucalgary.seng300.booking.R3PermissionStateTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in ca.ucalgary.seng300.booking.R3PermissionStateTest

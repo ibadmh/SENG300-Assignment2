@@ -16,3 +16,7 @@ manual mutant notifyOnReject (not PIT),./mvnw -B clean test,ecd2a20,true,8,12,0,
 manual mutant orderSwapped (not PIT),./mvnw -B clean test,3571696,true,17,3,0,,,,,manual: killed,evidence/runs/manual-mutants/orderSwapped
 status-only demo on saveThenReject mutant,./mvnw -B clean test -Dtest=StatusOnlyDemoTest,edac266,true,1,0,0,,,,,manual: SURVIVED the status-only test,evidence/runs/manual-mutants/saveThenReject-statusOnly
 buggy version with R1 suite (Part 5),./mvnw -B clean test,d3ddb52,true,20,0,0,,,,,no R1 or starter test fails,evidence/runs/part5/buggy-r1-suite
+
+final tests (all fixes),./mvnw clean test,46c372d,true,54,0,0,,,,,,evidence/runs/final-tests
+final coverage,./mvnw clean verify,46c372d,true,54,0,0,31,31,20,20,,evidence/runs/final-coverage
+property tests Part 6 (seed 67; 100 tries),./mvnw -Pproperties clean test,46c372d,true,56,0,0,,,,,,evidence/runs/properties
