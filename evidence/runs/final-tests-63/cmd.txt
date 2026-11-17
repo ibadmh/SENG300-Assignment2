@@ -1,0 +1,4 @@
+commit: f25fd713bd895adf8e1c595cc6c4566744e9cd27 (origin/main)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean test
+exit=0

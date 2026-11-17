@@ -2,9 +2,9 @@ checkpoint,command,git_commit,working_tree_clean,passed,failed,skipped,covered_l
 starter coverage (reference main),./mvnw -B clean verify,b4c869a6370b975b24324d6103d8c9cf375d5220,true,3,0,0,22,31,7,20,,evidence/runs/starter-coverage
 starter PIT (informational),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,b4c869a6370b975b24324d6103d8c9cf375d5220,true,3,0,0,22,31,7,20,KILLED=5;SURVIVED=7;NO_COVERAGE=8;TIMED_OUT=0;NON_VIABLE=0;RUN_ERROR=0,evidence/runs/starter-pit
 R1 tests alone coverage,./mvnw -B clean verify -Dtest=R1TimeValidationTest,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,17,0,0,19,31,11,20,,evidence/runs/r1-only-coverage
-final coverage (starter 3 + R1 17),./mvnw -B clean verify,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,20,0,0,29,31,15,20,,evidence/runs/final-coverage
+R1-stage coverage (starter 3 + R1 17),./mvnw -B clean verify,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,20,0,0,29,31,15,20,,evidence/runs/r1-stage-coverage
 pre-mutation PIT,./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,20,0,0,29,31,15,20,KILLED=13;SURVIVED=5;NO_COVERAGE=2;TIMED_OUT=0;NON_VIABLE=0;RUN_ERROR=0,evidence/runs/pre-mutation
-final-mutation PIT (rerun; R1 tests unchanged except one extra valid row),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,20,0,0,29,31,15,20,KILLED=13;SURVIVED=5;NO_COVERAGE=2;TIMED_OUT=0;NON_VIABLE=0;RUN_ERROR=0,evidence/runs/final-mutation
+R1-stage PIT (starter 3 + R1 17),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,a3c5dfae7a57b46fea0b2b5359754c6919257ac1,true,20,0,0,29,31,15,20,KILLED=13;SURVIVED=5;NO_COVERAGE=2;TIMED_OUT=0;NON_VIABLE=0;RUN_ERROR=0,evidence/runs/r1-pit
 manual mutant startEqNowAccepted (not PIT),./mvnw -B clean test,a1570e0,true,18,2,0,,,,,manual: killed,evidence/runs/manual-mutants/startEqNowAccepted
 manual mutant endEqStartAccepted (not PIT),./mvnw -B clean test,2c2f4e4,true,18,2,0,,,,,manual: killed,evidence/runs/manual-mutants/endEqStartAccepted
 manual mutant dropEndCondition (not PIT),./mvnw -B clean test,e4d2d85,true,15,5,0,,,,,manual: killed,evidence/runs/manual-mutants/dropEndCondition

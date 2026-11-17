@@ -1,0 +1,43 @@
+-------------------------------------------------------------------------------
+Test set: ca.ucalgary.seng300.booking.R1TimeValidationTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.186 s <<< FAILURE! -- in ca.ucalgary.seng300.booking.R1TimeValidationTest
+ca.ucalgary.seng300.booking.R1TimeValidationTest.zeroLengthInsideActive_isInvalidNotConflict -- Time elapsed: 0.040 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: bad times must give INVALID_TIME ==> expected: <INVALID_TIME> but was: <CONFLICT>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+	at ca.ucalgary.seng300.booking.R1TimeValidationTest.assertRejectedAsInvalidTime(R1TimeValidationTest.java:45)
+	at ca.ucalgary.seng300.booking.R1TimeValidationTest.zeroLengthInsideActive_isInvalidNotConflict(R1TimeValidationTest.java:212)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+ca.ucalgary.seng300.booking.R1TimeValidationTest.pastStartThatWouldConflict_isInvalidNotConflict -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: bad times must give INVALID_TIME ==> expected: <INVALID_TIME> but was: <CONFLICT>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+	at ca.ucalgary.seng300.booking.R1TimeValidationTest.assertRejectedAsInvalidTime(R1TimeValidationTest.java:45)
+	at ca.ucalgary.seng300.booking.R1TimeValidationTest.pastStartThatWouldConflict_isInvalidNotConflict(R1TimeValidationTest.java:180)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+ca.ucalgary.seng300.booking.R1TimeValidationTest.reversedTimesThatWouldConflict_isInvalidNotConflict -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: bad times must give INVALID_TIME ==> expected: <INVALID_TIME> but was: <CONFLICT>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+	at ca.ucalgary.seng300.booking.R1TimeValidationTest.assertRejectedAsInvalidTime(R1TimeValidationTest.java:45)
+	at ca.ucalgary.seng300.booking.R1TimeValidationTest.reversedTimesThatWouldConflict_isInvalidNotConflict(R1TimeValidationTest.java:196)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

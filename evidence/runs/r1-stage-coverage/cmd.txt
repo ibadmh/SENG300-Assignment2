@@ -1,0 +1,4 @@
+commit: a3c5dfae7a57b46fea0b2b5359754c6919257ac1 (a3c5dfa)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean verify
+exit=0

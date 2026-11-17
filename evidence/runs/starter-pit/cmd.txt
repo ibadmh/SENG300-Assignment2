@@ -1,0 +1,4 @@
+commit: b4c869a6370b975b24324d6103d8c9cf375d5220 (b4c869a)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage
+exit=0

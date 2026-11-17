@@ -1,0 +1,4 @@
+commit: 3571696d1dd39a24df323933d8ebeb23fe35164a (origin/mutant/orderSwapped)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean test
+exit=1

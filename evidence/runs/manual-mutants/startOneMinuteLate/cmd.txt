@@ -1,0 +1,4 @@
+commit: 0f455ba14d5ec47fcbc0fc77b8087a332d655d22 (origin/mutant/startOneMinuteLate)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean test
+exit=1

@@ -1,7 +1,7 @@
 # R1 decision outcomes for create() (Part 3), compared with JaCoCo
 
 Method chosen: `BookingService.create()` as a whole (to agree with the R2 owner). R1 supplies outcomes O1 to O3; R2 supplies the rest.
-JaCoCo data: evidence/runs/starter-coverage (reference b4c869a) and evidence/runs/final-coverage (tests commit a3c5dfa).
+JaCoCo data: evidence/runs/starter-coverage (reference b4c869a, 22/31 lines, 7/20 branches), evidence/runs/r1-stage-coverage (starter + R1 at a3c5dfa, 29/31, 15/20) and evidence/runs/final-coverage (whole suite at 46c372d, 31/31, 20/20; the branches and lines R1 leaves missed are covered by the R2 to R5 tests).
 
 | Outcome | start after now? | end after start? | Same-room ACTIVE overlap? | Result | Tests that execute it |
 | --- | --- | --- | --- | --- | --- |

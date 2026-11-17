@@ -1,0 +1,4 @@
+commit: edac26674ad3c5cb5fa7a7c86f38af745731f0b8 (origin/mutant/statusOnlyDemo)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean test -Dtest=StatusOnlyDemoTest
+exit=0

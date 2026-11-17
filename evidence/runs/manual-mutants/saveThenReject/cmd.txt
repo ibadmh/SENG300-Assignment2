@@ -1,0 +1,4 @@
+commit: 813b6148249640af8866f02c0ddb0374ff66e63a (origin/mutant/saveThenReject)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean test
+exit=1

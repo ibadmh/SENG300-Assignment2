@@ -1,0 +1,4 @@
+commit: 91e73959e0bbb7f75cd986165084910c15dd190d (origin/mutant/orToAnd)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean test
+exit=1

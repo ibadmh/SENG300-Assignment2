@@ -1,4 +1,4 @@
-# One bug record
+# R1 scope note for Part 5 (the group bug record is in the shared report, Part 5)
 
 Scope note (Ibad, R1): the supplied bug is NOT an R1 bug. No R1 test and no starter test detects it, so the repair, three-version evidence and bug record belong to the member who owns the broken rule (R3 and R5, cancellation). This file records only what the R1 suite shows.
 

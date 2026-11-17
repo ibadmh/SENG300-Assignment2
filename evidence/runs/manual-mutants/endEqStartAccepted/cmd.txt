@@ -1,0 +1,4 @@
+commit: 2c2f4e4a8db21fb5ade75a7311c588514ccfc7cf (origin/mutant/endEqStartAccepted)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean test
+exit=1

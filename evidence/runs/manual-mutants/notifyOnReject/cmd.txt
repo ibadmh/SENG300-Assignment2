@@ -1,0 +1,4 @@
+commit: ecd2a2069616a8f7b2b2efb3bb673773507da0c1 (origin/mutant/notifyOnReject)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean test
+exit=1

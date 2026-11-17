@@ -1,0 +1,4 @@
+commit: e3879fe00b11e6f34c8a6ccba59c3dc4fd6b1989 (origin/mutant/dropStartCondition)
+cwd: repo checkout of that commit (git archive)
+command: ./mvnw -B clean test
+exit=1
