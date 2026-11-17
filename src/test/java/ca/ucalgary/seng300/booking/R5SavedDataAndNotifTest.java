@@ -98,7 +98,7 @@ class R5SavedDataAndNotifTest{
     // Too Late Request
     @Test
     void TooLateRequestDoesNothing(){
-        Booking b1 = fixtures.seed("b1", ROOM, OWNER, 0, 30, BookingState.CANCELLED);
+        Booking b1 = fixtures.seed("b1", ROOM, OWNER, 0, 30, BookingState.ACTIVE);
         Booking b2 = seedOther(fixtures);
 
         // returns
