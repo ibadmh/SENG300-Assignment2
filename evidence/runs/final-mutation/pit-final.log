@@ -71,13 +71,13 @@
 [INFO] Auto adding org.junit.platform:junit-platform-launcher:jar:1.11.4 < central (https://repo.maven.apache.org/maven2, default, releases) to classpath.
 [INFO] Mutating from /Users/dawoodshees/Desktop/UofC/F26/SENG300/A2/repo/target/classes
 [INFO] Replacing properties in argLine -javaagent:/Users/dawoodshees/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/dawoodshees/Desktop/UofC/F26/SENG300/A2/repo/target/jacoco.exec,includes=ca/ucalgary/seng300/booking/BookingService*
-8:40:16 p.m. PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
-8:40:16 p.m. PIT >> INFO : Created 1 mutation test units in pre scan
-8:40:16 p.m. PIT >> INFO : Sending 7 test classes to minion
-8:40:16 p.m. PIT >> INFO : Sent tests to minion
-/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-8:40:17 p.m. PIT >> INFO : Calculated coverage in 0 seconds.
-8:40:17 p.m. PIT >> INFO : Created 1 mutation test units
-/8:40:18 p.m. PIT >> INFO : Completed in 1 seconds
+8:57:43 p.m. PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+8:57:43 p.m. PIT >> INFO : Created 1 mutation test units in pre scan
+8:57:43 p.m. PIT >> INFO : Sending 7 test classes to minion
+8:57:43 p.m. PIT >> INFO : Sent tests to minion
+/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\8:57:43 p.m. PIT >> INFO : Calculated coverage in 0 seconds.
+8:57:43 p.m. PIT >> INFO : Created 1 mutation test units
+/8:57:44 p.m. PIT >> INFO : Completed in 1 seconds
 ================================================================================
 - Mutators
 ================================================================================
@@ -134,6 +134,6 @@ Enhanced functionality available at https://www.arcmutate.com/
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.749 s
-[INFO] Finished at: 2026-11-16T20:40:18-07:00
+[INFO] Total time:  2.651 s
+[INFO] Finished at: 2026-11-16T20:57:44-07:00
 [INFO] ------------------------------------------------------------------------

@@ -7,5 +7,6 @@ manual recheck M3 ACTIVE check -> false (temporary local edit; restored),./mvnw 
 manual M3 opposite: ACTIVE check -> true (not a PIT mutant; restored),./mvnw -B test,3af2db5 + local edit,false,50,2,0,,,,,KILLED (manual),evidence/runs/manual-mutants-part4/M3opp_true.log
 manual equivalent minutes <= 119 (not a PIT mutant; restored),./mvnw -B test,3af2db5 + local edit,false,52,0,0,,,,,equivalent (no failure expected),evidence/runs/manual-mutants-part4/EQ_le119.log
 interim PIT (main 04745b6: R1-R4 + CancelSequenceTest; before R5),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,a8d60b6 (code and tests = main 04745b6),true,54,0,0,31,31,,,KILLED=20;SURVIVED=0;NO_COVERAGE=0;TIMED_OUT=0;RUN_ERROR=0;NON_VIABLE=0;MEMORY_ERROR=0,replaced by final-mutation below
-final-mutation tests (main 3daf961: R1-R5 + CancelSequenceTest),./mvnw -B clean test,3daf961,true,62,0,0,,,,,,
-final-mutation PIT (main 3daf961: R1-R5 + CancelSequenceTest),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,3daf961,true,62,0,0,31,31,,,KILLED=20;SURVIVED=0;NO_COVERAGE=0;TIMED_OUT=0;RUN_ERROR=0;NON_VIABLE=0;MEMORY_ERROR=0,evidence/runs/final-mutation
+final-mutation tests (main dfd4f54: R1-R5 + CancelSequenceTest S1-S3),./mvnw -B clean test,dfd4f54,true,63,0,0,,,,,,
+final-mutation PIT (main dfd4f54: R1-R5 + CancelSequenceTest S1-S3),./mvnw -B test-compile org.pitest:pitest-maven:mutationCoverage,dfd4f54,true,63,0,0,31,31,,,KILLED=20;SURVIVED=0;NO_COVERAGE=0;TIMED_OUT=0;RUN_ERROR=0;NON_VIABLE=0;MEMORY_ERROR=0,evidence/runs/final-mutation
+manual recheck M1 minutes <= 120 on final code (temporary local edit; restored),./mvnw -B test,dfd4f54 + local edit,false,59,4,0,,,,,KILLED (manual),evidence/runs/manual-mutants-part4/M1_le120_final.log
