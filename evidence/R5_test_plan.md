@@ -12,12 +12,11 @@ notification.
 ## Input groups
 | Group                    | Return    | Change Saved State | Notifications |
 |--------------------------|-----------|--------------------|---------------|
-| Successfull cancellation | CANCELLED | Yes                | 1             |
-| Inactive Request         | INACTIVE  | No                 | 0             |
-| Denied Request           | DENIED    | No                 | 0             |
-| Too Late Request         | TOO_LATE  | No                 | 0             |
-| Repeat Cancellation      | CANCELLED | No                 | 0             |
-| Booking Created          | ACTIVE    | Yes                | 0             |
+| Successfull cancellation | CANCELLED | Yes                | 1             | 
+| Inactive Request         | INACTIVE  | No                 | 0             | 
+| Too Late Request         | TOO_LATE  | No                 | 0             | 
+| Repeat Cancellation      | CANCELLED | No                 | 0             | 
+| Booking Created          | ACTIVE    | Yes                | 0             | 
 
 ## Boundaries
 See R1-R4 for boundaries of the above input groups
@@ -42,6 +41,9 @@ Owner = caller is the booking owner. Time = minutes from now to start.
 ### Repeat Cancellation (Owner)
 - Test for D1, then D3
 - Test for D1, then D4
+
 ### Repeat Cancellation (Non-Owner)
 - Test for D1, then D9
+
 ## Changes after code inspection
+None
